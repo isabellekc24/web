@@ -9,7 +9,41 @@
         
         img{
             float: left;
+            width: 400px;
         }
+        .box{
+            display: inline-block; /*permite os elementos da box ficarem ao lado*/
+            /*inline-block da para definir a altura e largura*/
+            width: 100px;
+            height: 100px;
+            position: static;
+        }
+
+        #box2{
+            position: relative;
+            left: 30px;
+        }
+
+        #box3{
+            position: absolute; /*posicionam ao começo*/
+            top: 50px;
+        }
+
+        #box4{
+            top: 10px;
+            position: fixed;
+            left: 10px;
+            background-color: aqua;
+
+        }
+
+        .container{
+            position: relative;
+        }
+
+        html, body{border-color: red;}
+        
+
     </style>
 
 </head>
@@ -19,14 +53,31 @@
    
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consequuntur quam ex numquam commodi eaque aliquam blanditiis obcaecati hic assumenda quisquam in mollitia porro explicabo, quia maxime? Aliquid, molestiae fuga? Lorem ipsum dolor sit amet consectetur adipisicing elit. Error minus ad suscipit iusto explicabo nihil, ipsum officiis, perferendis distinctio aperiam perspiciatis natus consequuntur cum deleniti ullam! Sapiente nisi a facere. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, in placeat! Vitae neque, nulla error sed fugiat sunt mollitia. Rem quidem officia perferendis laboriosam, molestias iste a fugit ipsum et?</p>
 
-    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consequuntur quam ex numquam commodi eaque aliquam blanditiis obcaecati hic assumenda quisquam in mollitia porro explicabo, quia maxime? Aliquid, molestiae fuga? Lorem ipsum dolor sit amet consectetur adipisicing elit. Error minus ad suscipit iusto explicabo nihil, ipsum officiis, perferendis distinctio aperiam perspiciatis natus consequuntur cum deleniti ullam! Sapiente nisi a facere. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, in placeat! Vitae neque, nulla error sed fugiat sunt mollitia. Rem quidem officia perferendis laboriosam, molestias iste a fugit ipsum et?</span>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consequuntur quam ex numquam commodi eaque aliquam blanditiis obcaecati hic assumenda quisquam in mollitia porro explicabo, quia maxime? Aliquid, molestiae fuga? Lorem ipsum dolor sit amet consectetur adipisicing elit. Error minus ad suscipit iusto explicabo nihil, ipsum officiis, perferendis distinctio aperiam perspiciatis natus consequuntur cum deleniti ullam! Sapiente nisi a facere. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, in placeat! Vitae neque, nulla error sed fugiat sunt mollitia. Rem quidem officia perferendis laboriosam, molestias iste a fugit ipsum et?</p>
 
     <span>Lorem</span>
-    <br>
+
     <img src="./img/Sol.webp" alt="">
 
     <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi sunt, non qui distinctio hic quas voluptatibus labore eaque adipisci eius quo impedit, debitis doloremque odit! Veniam error aliquid debitis architecto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempora, totam optio accusantium rem reiciendis nemo aliquam, doloribus unde impedit ea? Atque dicta adipisci provident labore accusamus quisquam inventore praesentium!</span>
     
-    
+
+    <!--div#box5.(box$)*5
+    <div id="box5" class=""></div>
+    <box1></box1>
+    <box2></box2>
+    <box3></box3>
+    <box4></box4>
+    <box5></box5>-->
+
+    <div class="container">
+        <div id="box1" class="box">box1</div>
+        <div id="box2" class="box">box2</div>
+        <div id="box3" class="box">box3</div>
+        <div id="box4" class="box">box4</div>
+        <div id="box5" class="box">box5</div>
+
+    </div>
+
 </body>
 </html>
