@@ -4,12 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ATIVIDADE 2</title>
+	<style>
+		img{
+			width: 300px;
+			padding: 20px;
+		}
+
+	</style>
 </head>
 <body>
 	<h1>O que é HTTP?</h1>
 	<p><strong>HTTP</strong> significa <mark>HyperText Transfer Protocol</mark>, ou em português, Protocolo de 
 		<mark>Transferência de Hipertexto</mark>. Ele é como uma língua comum que os computadores usam 
 		para se comunicarem na internet.</p>
+
+		<img src="/img/http.jpg" alt="Imagem 1">
 
 		<h4>Como funciona?</h4>
 		<p>Quando você entra em um site, por exemplo o <a href="https://www.google.com">www.google.com</a> o que acontece é:</p>
@@ -28,18 +37,45 @@
 		<hr>
 
 		<h2>Requisição</h2>
+
+		<img src="/img/rquest.png" alt="Request">
+
 		<p>Uma requisição HTTP é o que o navegador envia para o servidor.</p>
+		<p>É o pedido que o navegador (cliente) faz ao servidor.
+		Ele está dizendo: "Oi, servidor, me manda esse arquivo chamado /index.html, por favor."</p>
 		 
 		<pre>
-			&lt;GET /index.html HTTP/1.1
-			&lt;Host: www.exemplo.com
-			&lt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
-			&lt;Accept: text/html,application/xhtml+xml
+			&lt;GET /index.html HTTP/1.1 <!--O navegador está pedindo o recurso /index.html-->
+			&lt;Host: www.exemplo.com <!--Informa qual site o navegador quer acessar-->
+			&lt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)<!--Diz ao servidor qual navegador e sistema o cliente está usando.-->
+			&lt;Accept: text/html,application/xhtml+xml<!--Diz que o cliente aceita receber respostas em formato HTML-->
 			&lt;Accept-Language: pt-BR
-			&lt;Connection: keep-alive
+			&lt;Connection: keep-alive <!--Pede para manter a conexão aberta (ao invés de fechar após a resposta).-->
 		</pre>
 
 		<h2>Response</h2>
+		<img src="/img/rquest.png" alt="Request">
+
+
+
 		<p>Depois que o servidor processa o pedido, ele responde algo assim:</p>
-</body>
+		<p>É o retorno que o servidor envia ao cliente depois de processar o pedido.
+		Ele está dizendo: "Aqui está o que você pediu!"</p>
+		
+		<pre>
+			&lt;HTTP/1.1 200 OK <!--Indica que o pedido foi bem-sucedido. O status 200 OK é o código de sucesso.-->
+			&lt;Content-Type: text/html <!--O conteúdo da resposta é uma página HTML.-->
+			&lt;Content-Length: 1270 <!--O tamanho do conteúdo retornado.-->
+			<br>
+			&lt;html>
+				&lt;head><title>Example</title></head>
+				&lt;body>Hello World</body>			
+			&lt;/html>
+			<!--Conteudo que a pagina retorna-->
+		</pre>
+
+
+
+
+	</body>
 </html>
