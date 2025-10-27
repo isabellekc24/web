@@ -6,16 +6,44 @@
     <title>6b-display.html</title>
     <style>
         *{
-            border: 1px solid black;
-
             bottom: 0px;
             margin: 0px;
         }
 
         .container{
             display: flex;
+            justify-content: space-between;
+            /*width: 100%; /*faz ocupar a largura da tela*/
+            /*height: 130px;/*define altura dos blocos*/
         }
 
+        .box{
+            display: flex;
+            position: static;
+            height: 100px;
+            width: 100%;
+
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        #box1{
+            background-color: blue;
+            position: relative;
+        }
+        #box2{
+            background-color: green;
+            position: relative;
+        }
+        #box3{
+            background-color: red;
+            position:  relative;
+        }
+        #box4{
+            background-color: yellow;
+            position: relative;
+        }
 
 
 
