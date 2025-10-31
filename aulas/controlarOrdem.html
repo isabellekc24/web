@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-content: center; /*posiciona os itens que estao dentro do fluxo secundario(por "linha")*/
+            
+            
+            
+            height: 100vh;
+
+            /*grira no body*/
+            animation: rotacao 4s linear infinite;
+        }
+
+        .box{
+            background-color: pink;
+            border-radius: 50%;
+            border: 20px solid lightgreen;
+            width: 100px;
+            height: 100px;
+            font-size: 4rem;
+            flex-shrink: 0;
+            
+            /*gira no box*/
+            animation: rotacao 4s linear infinite;
+        }
+        @keyframes rotacao {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+            
+        }
+
+        /*animação*/
+        .box{border-top-color: green;
+            border-right-color: blue;
+            border-bottom-color: red;
+            border-left-color: yellow;}
+
+
+        #item1{order: 2;}
+        #item2{order: 1;}
+        #item3{order: 4;}
+        #item4{order: 0;}
+
+    </style>
+</head>
+<body>
+    <div class="box" id="item1">1</div>
+    <div class="box" id="item2">2</div>
+    <div class="box" id="item3">3</div>
+    <div class="box" id="item4">4</div>
+
+
+</body>
+</html>

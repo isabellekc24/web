@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container{
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        @media screen and (max-width: 500px){
+            .container{
+
+                grid-template-areas: 
+                "header"
+                "main"
+                "sideBar"
+                "footer";
+            }
+        }
+
+        @media screen and (min-width: 401px) and (max-width: 1000px){
+            .container{
+
+                grid-template-areas: 
+                "header header"
+                "main   sideBar"
+                "footer footer";
+            }
+        }
+
+        /*.container{
+
+            display: grid;
+            grid-template-areas: 
+            "header header header header"
+            "main main . sideBar"
+            "footer footer footer footer";
+        }*/
+
+        .header{
+            grid-area: header;
+            background-color: #ff9900;
+        }
+
+        .main{
+            grid-area: main;
+            background-color: #3b85ca;
+        }
+
+        .sideBar{
+            grid-area: sideBar;
+            background-color: #e72525;
+        }
+
+        .footer{
+            grid-area: footer;
+            background-color: #4cca3b;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box header">Header</div>
+        <div class="box main">Main</div>
+        <div class="box sideBar">Side Bar</div>
+        <div class="box footer">Footer</div>
+    </div>
+    
+</body>
+</html>
