@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    body {
+      font-family: Arial, sans-serif; /*fonte do corpo*/
+      display: flex; /*transforma o corpo num flex*/
+      justify-content: center; /*centraliza horazontamentlte*/
+      align-items: center; /*centraliza verticalmente*/
+      height: 100vh; /*100% altura tela*/
+      margin: 0; /*remove margens do nav*/
+    }/*assim a lista ficou n cnetro da tela*/
+
+    .lista {
+      background-color: rgb(233, 231, 231);
+      border-radius: 10px;
+      width: 280px;
+      padding: 10px 0;/*espaço dentro da caixa*/
+    }
+
+    .pessoas {
+      display: flex; /*permite foto e texto ao lado*/
+      align-items: center; /*alinha verticalmente conteudo no meio*/
+      padding: 10px 15px; /**espaçamento em cada linh*/
+      border-bottom: 1px solid #aaa; 
+    }
+
+    .pessoas img {
+      width: 50px; /*tamanho fixo das imgs*/
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px; /*espaço entre img e texto*/
+
+    }
+
+    .info { /*nome  eendereço um abaixo do outro*/
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nome {
+      font-weight: bold;
+      font-size: 14px;
+      color: #000
+    }
+
+    .endereco {
+      font-size: 12px;
+      color: #aaa;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="lista">
+        <div class="pessoas">
+            <img src="https://this-person-does-not-exist.com/img/avatar-genbbe1e27a09e341f3aa7fba22d2b53ff0.jpg" alt="img">
+            <div class="info">
+                <p class="nome">Isabelle Kohler</p>
+                <p class="endereco">Rua Piriri, 83</p>
+            </div>
+        </div>
+
+        <div class="pessoas">
+            <img src="https://this-person-does-not-exist.com/img/avatar-gen7262bb283c0a1172a0381ee00d9d6ddf.jpg" alt="foto2">
+            <div class="info">
+                <p class="nome">Julia da Silva</p>
+                <p class="endereco">Rua Horizonte, 225</p>
+            </div>
+        </div>
+
+        <div class="pessoas">
+            <img src="https://this-person-does-not-exist.com/img/avatar-gen38f3f5d02f18841ac9353f8db9445797.jpg" alt="foto3">
+            <div class="info">
+                <p class="nome">Marcele Joonz</p>
+                <p class="endereco">Rua Marte, 1952</p>
+            </div>
+        </div>
+
+        <div class="pessoas">
+            <img src="https://this-person-does-not-exist.com/img/avatar-gen0f20ed879c9dc99240a47c77f69a66bd.jpg" alt="foto4">
+            <div class="info">
+                <p class="nome">Joao Machado</p>
+                <p class="endereco">Rua Novas, 222</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

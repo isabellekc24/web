@@ -3,9 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chat</title>
+    <style>
+
+        body{
+            background-color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .chat{
+            border: 1px solid #aaa;
+            width: 400px;
+            height: 500px;
+            background-color: white;
+            margin: 30px auto; /*centraliza div no centro da tela*/
+            border-radius: 10px;
+            padding: 15px;
+            overflow-y: auto;
+            position: relative; /*permite posicionar itens dentro, como o cmapo de digitar*/
+        }
+
+        .esquerda{
+            float: left; /*fica posicionada ao lado esquerdo*/
+            margin: 5px 40px;  /*posiciona bordas*/
+            background-color: rgb(208, 224, 255);
+            border-radius: 10px;
+            border: 1px solid #aaa;
+            padding: 10px; /*espaco interno*/
+            word-wrap: break-word;
+
+            position: relative; /*para poder posicionar itens dentro (como a imagem*/
+        }
+
+        .direita{
+            float: right;
+            margin: 5px 40px;
+            background-color: #3d6e8f;
+            border-radius: 10px;
+            border: 1px solid #aaa;
+            padding: 5px;
+            max-width: 80%;
+
+            position: relative;
+        }
+
+        .mensagem img{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            position: absolute; /*permite colocar a imagem por cima da mensagem*/
+            top: -5px; /*sobre um pouco*/
+        }
+
+        .esquerda img{
+            left: -45px;
+        }
+
+        .direita img{
+            right: -45px;
+        }
+
+        .digitar{
+            position: absolute; /*fixa dentrodo chat*/
+            bottom: 10px; /*encosta no fundo*/
+        }
+
+        .digitar input[type="text"]{
+            width: 75%;
+            padding: 8px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        .digitar input[type="submit"] {
+            padding: 8px;
+            border: none; /*tira a borda padrao do botao*/
+            border-radius: 5px;
+            background-color: #000000;
+            color: white;
+            cursor: pointer; /*faz o cursor virar maozinha*/
+            width: 20%;
+        }
+       
+
+    </style>
 </head>
 <body>
+    <div class="chat">
+        <div class="mensagem esquerda">
+            <img src="https://cdn-icons-png.flaticon.com/512/194/194938.png" alt="esq">
+            <p>Olá, tudo bem?</p>
+        </div>
+
+        <div class="mensagem direita">
+            <img src="https://cdn-icons-png.flaticon.com/512/194/194935.png" alt="dir">
+            <p>Estou bem sim, e você?</p>
+        </div>
+
+        <div class="mensagem esquerda">
+            <img src="https://cdn-icons-png.flaticon.com/512/194/194938.png" alt="esq">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum sunt veniam esse suscipit consequatur similique voluptate animi voluptatibus, error praesentium accusamus, exercitationem ratione! Repellendus voluptates nisi ipsa modi qui dolorem.</p>
+        </div>
+
+        <div class="mensagem direita">
+            <img src="https://cdn-icons-png.flaticon.com/512/194/194935.png" alt="dir">
+            <p>Criatura...</p>
+        </div>
+
+        <div class="digitar">
+            <input type="text" placeholder="Digite sua mensagem">
+            <input type="submit" value="Enviar">
+
+        </div>
+    </div>
     
 </body>
 </html>
