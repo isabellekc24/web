@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Ajuste</title>
+
+    <style>
+        /*div.container>div#box$.box{$}*5*/
+
+        body{
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+
+        .box{
+            margin: 3px;
+        }
+
+        .container{
+            display: grid;
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        @media screen and (max-width: 1000px){
+            .container{
+                grid-template-areas:
+                "header header header header header header"
+                "leftAside banner banner banner banner rightAside"
+                "leftAside main main main main rightAside"
+                "leftAside main main main main rightAside"
+                "leftAside main main main main rightAside"
+                "leftAside lowContent lowContent lowContent lowContent rightAside"
+                "footer footer footer footer footer footer";
+            }
+
+        }
+
+        @media screen and (max-width: 500px){
+            .container{
+                grid-template-areas:
+                "header"
+                "banner"
+                "leftAside"
+                "main"
+                "main"
+                "main"
+                "main"
+                "main"
+                "main"
+                "main"
+                "rightAside"
+                "lowContent"
+                "footer";
+            }
+
+        }
+            
+        
+
+        #box1{
+            background-color: yellow;
+            grid-area: header;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #box2{
+            background-color: rgb(255, 51, 0);
+            grid-area: banner;
+
+            display: flex; /*para alinhar ao centro do box*/
+            justify-content: center; /*alinha horizontal*/
+            align-items: center; /*aliha vertical*/
+        }
+        #box3{
+            background-color: green;
+            grid-area: leftAside;
+        }
+        #box4{
+            background-color: yellow;
+            grid-area: rightAside;
+        }
+        #box5{
+            background-color: blue;
+            grid-area: main;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #box6{
+            background-color: green;
+            grid-area: lowContent;
+        }
+        #box7{
+            background-color: blue;
+            grid-area: footer;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1" class="box">Header</div>
+        <div id="box2" class="box">Banner</div>
+        <div id="box3" class="box">Left Aside</div>
+        <div id="box4" class="box">Right Aside</div>
+        <div id="box5" class="box">Main</div>
+        <div id="box6" class="box">Low Content</div>
+        <div id="box7" class="box">Footer</div>
+    </div>
+    
+    
+</body>
+</html>
