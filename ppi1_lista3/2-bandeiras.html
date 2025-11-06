@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeira</title>
+    <style>
+        .bandeira {
+            width: 300px;
+            height: 200px;
+            margin: 40px auto;
+            border: 1px solid #000;
+        }
+
+        a{
+            display: inline-block;
+            margin: 10px;
+            color: white;
+            background-color: grey;
+            padding: 8px;
+        }
+
+         #japao.bandeira {
+            background-color: white;
+            position: relative;
+        }
+
+        #japao.bandeira > div.circulo {
+            background-color: red;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #alemanha.bandeira {
+            display: flex;
+            flex-direction: column;
+        }
+        
+
+        #alemanha.bandeira > div.preto{
+            background-color: black;
+            flex: 1;
+        }
+        #alemanha.bandeira > div.vermelho{
+            background-color: red;
+            flex: 1;
+        }
+        #alemanha.bandeira > div.amarelo{
+            background-color: yellow;
+            flex: 1;
+        }
+
+
+        #holanda.bandeira{
+            display: flex;
+            flex-direction: column;
+        }
+
+        #holanda.bandeira > div.vermelho{
+            background-color: red;
+            flex: 1;
+        }
+        #holanda.bandeira > div.branco{
+            background-color: white;
+            flex: 1;
+        }
+        #holanda.bandeira > div.azul{
+            background-color: blue;
+            flex: 1;
+        }
+
+
+         #brasil.bandeira {
+            background-color: green;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #brasil.bandeira > div.losango {
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            background-color: yellow;
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #brasil.bandeira > div.losango > div.circulo {
+            width: 80px;
+            height: 80px;
+            background-color: blue;
+            border-radius: 50%;
+        }
+
+        
+
+    </style>
+
+
+</head>
+<body>
+
+     <!-- Links de navegação -->
+        <a href="#japao">Bandeira Japão</a>
+        <a href="#alemanha">Bandeira Alemanha</a>
+        <a href="#holanda">Bandeira Holanda</a>
+        <a href="#brasil">Bandeira Brasil</a>
+
+        <div id="japao" class="bandeira">
+            <div class="circulo"></div>
+        </div>
+
+        <div id="alemanha" class="bandeira">
+            <div class="preto"></div>
+            <div class="vermelho"></div>
+            <div class="amarelo"></div>
+        </div>
+
+        <div id="holanda" class="bandeira">
+            <div class="vermelho"></div>
+            <div class="branco"></div>
+            <div class="azul"></div>
+        </div>
+
+        <div id="brasil" class="bandeira">
+            <div class="losango">
+                <div class="circulo"></div>
+            </div>
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

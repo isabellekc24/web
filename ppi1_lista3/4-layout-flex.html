@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .superior {
+            background-color: #1e1e1e;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 20px;          
+        }
+
+        .circulo {
+            width: 25px;
+            height: 25px;
+            background-color: blue;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            height: 100vh;
+        }
+
+        .navegacao {
+            background-color: orange;
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .principal {
+            background-color: #1e1e1e;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cabecalho, .rodape {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .conteudo {
+            background-color: purple;
+            color: white;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="superior">
+        <div class="circulo"></div>
+        <div class="circulo"></div>
+        <div class="circulo"></div>
+    </div>
+
+    <div class="container">
+        <div class="navegacao">navegação</div>
+
+        <div class="principal">
+            <div class="cabecalho">cabeçalho</div>
+            <div class="conteudo">conteúdo</div>
+            <div class="rodape">rodape</div>
+        </div>
+    </div>
+    
+</body>
+</html>

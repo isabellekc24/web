@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show Flex</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+        }
+
+        .container {
+            display: flex;
+            width: 90%;
+            height: 400px;
+            gap: 10px;
+        }
+
+        .imagem {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .container div {
+            flex: 1;
+            border-radius: 20px;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .container div:hover {
+            flex: 4;
+        }
+
+        .inf {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            color: white;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="imagem">
+            <img src="https://picsum.photos/id/1015/800/600" alt="img1">
+            <div class="inf">
+                <strong>Céu Azul</strong>
+                <p>Suiça</p>
+            </div>
+        </div>
+        <div class="imagem">
+            <img src="https://picsum.photos/id/1025/800/600" alt="img2">
+            <div class="inf">
+                <strong>Plantas</strong>
+                <p>Amazonia</p>
+            </div>
+        </div>
+        <div class="imagem">
+            <img src="https://picsum.photos/id/1035/800/600" alt="img3">
+            <div class="inf">
+                <strong>Montanha</strong>
+                <p>Noruagua</p>
+            </div>
+        </div>
+        <div class="imagem">
+            <img src="https://picsum.photos/id/1045/800/600" alt="img4">
+            <div class="inf">
+                <strong>Fumaça</strong>
+                <p>Japão</p>
+            </div>
+        </div>
+        <div class="imagem">
+            <img src="https://picsum.photos/id/1055/800/600" alt="img5">
+            <div class="inf">
+                <strong>Rio</strong>
+                <p>África</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
