@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGRA CSS</title>
+
+    <style>
+        p{
+            color: black;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        } 
+
+
+        li:first-child{
+            color: brown;
+        }
+
+
+        h1::before{
+            content: "- ";
+        }
+
+        .botao{
+            background-color: blueviolet;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .botao:hover{
+            animation: corBotao 2s ease;
+        }
+
+        @keyframes corBotao {
+            from{
+                background-color: blueviolet;
+            }to{
+                background-color: magenta;
+            }
+            
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <h1>Regra CSS</h1>
+
+    <p>É o que define os elementos do CSS ficarem estilizados na página</p>
+
+    <p>O Seletor indica qual elemento HTML será estilizado pela regra aplicada dentro do &lt;style>.</p>
+    <p>Exemplo: p, .container, #id1</p> <br>
+
+    <h3>A sintaxe básica de uma regra CSS é: </h3>
+    <p> p{background-color: red;} = seletor{propriedade: valor;}</p>
+
+    <ol type="I">
+        <li>Seletor: Indica a quais regras o CSS será aplicada</li>
+        <li>Propriedade: é a caracteristica que voce deseja mudar</li>
+        <li>Valor: Define como a propriedade deve se comportar</li>
+    </ol>
+
+    <br><br>
+    <button class="botao">Mude a cor passando o mouse aqui</button>
+
+
+
+
+</body>
+</html>

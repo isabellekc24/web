@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layouts</title>
+<style>
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    width: 100%;
+    height: 100vh;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 80px 1fr;
+    gap: 12px;
+  }
+
+  .laranja {
+    background-color: orange;
+  }
+  .azul {
+    background-color: rgb(118, 193, 255);
+  }
+
+  .roxo {
+    background-color: #b27eec;
+  }
+
+  .baixo {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+  }
+
+  .azul2 {
+    background: rgb(106, 201, 224);
+  }
+
+  .baixoBaixo {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+  }
+
+  .rosa {
+    background: #f7bfb7;
+  }
+
+  .verde {
+    background: #cde39e;
+  }
+  .container {
+  display: grid;
+  grid-template-areas:
+  "laranja azul"
+  "roxo branco";
+  gap: 10px;
+}
+
+.branco {
+    display: grid;
+    grid-template-rows: 80px 80px 1fr;
+    gap: 10px;
+  }
+
+  .circulos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 50px;
+  }
+  .circulo {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+  }
+  .circulo.laranja { background: orange; }
+  .circulo.rosa { background: pink; }
+  .circulo.verde { background: green; }
+  .circulo.roxo { background: #b27eec; }
+
+
+  @media screen and (max-width: 500px) {
+    .container{
+        grid-template-areas: 
+        "laranja"
+        "azul"
+        "roxo"
+        "branco"
+        "circulos"
+        "baixo"
+        "baixoBaixo"
+        ;
+    }
+  }
+
+
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="laranja"></div>
+    <div class="azul"></div>
+    <div class="roxo"></div>
+
+    <div class="branco">
+      <div class="circulos">
+        <div class="circulo laranja"></div>
+        <div class="circulo rosa"></div>
+        <div class="circulo verde"></div>
+        <div class="circulo roxo"></div>
+      </div>
+
+      <div class="baixo">
+        <div class="azul2"></div>
+        <div class="verde"></div>
+      </div>
+
+      <div class="baixoBaixo">
+        <div class="rosa"></div>
+        <div class="verde"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

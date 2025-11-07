@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Ajuste</title>
+
+    <style>
+        /*div.container>div#box$.box{$}*5*/
+
+        body{
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+
+        .box{
+            margin: 3px;
+        }
+
+        .container{
+            display: grid;
+            height: 100vh;
+            width: 100vw;
+
+             grid-template-areas:
+                "laranja laranja laranja rosa rosa rosa azul azul azul azul"
+                "laranja laranja laranja rosa rosa rosa azul azul azul azul"
+                "laranja laranja laranja rosa rosa rosa verde verde verde branco"
+                "roxo roxo roxo rosa rosa rosa verde verde verde branco"
+                "roxo roxo roxo rosa rosa rosa verde verde verde branco"
+                "amarelo amarelo amarelo amarelo amarelo amarelo verde verde verde branco "
+                
+                
+                ;
+        }
+
+       
+        .circulo {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+        }
+        .circulo.laranja { background: orange; }
+        .circulo.rosa { background: pink; }
+        .circulo.verde { background: green; }
+        .circulo.roxo { background: #b27eec; }
+        
+
+               
+
+
+            
+        
+
+        #box1{
+            background-color: orange;
+            grid-area: laranja;
+
+        }
+        #box2{
+            background-color: rgb(224, 109, 235);
+            grid-area: rosa;
+
+        }
+        #box3{
+            background-color: blue;
+            grid-area: azul;
+        }
+         #box4{
+            background-color: green;
+            grid-area: verde;
+        }
+         #box5 > div.circulos{
+            background-color: white;
+            grid-area: branco;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+    
+            gap: 50px;
+        }
+
+        #box6{
+            background-color: purple;
+            grid-area: roxo;
+        }
+
+        #box7{
+            background-color: yellow;
+            grid-area: amarelo;
+
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1" class="box">laranja</div>
+        <div id="box2" class="box">rosa</div>
+        <div id="box3" class="box">azul</div>
+        <div id="box4" class="box">verde</div>
+        <div id="box5" class="box">
+            <div class="circulos">
+                <div class="circulo laranja"></div>
+                <div class="circulo rosa"></div>
+                <div class="circulo verde"></div>
+                <div class="circulo roxo"></div>
+            </div>
+        </div>
+        <div id="box6" class="box">roxo</div>
+        <div id="box7" class="box">amarelo</div>
+
+
+    </div>
+    
+    
+</body>
+</html>

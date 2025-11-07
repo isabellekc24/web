@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeira</title>
+    <style>
+        .bandeira {
+            width: 300px;
+            height: 200px;
+            margin: 40px auto;
+            border: 1px solid #000;
+        }
+
+        a{
+            display: inline-block;
+            margin: 10px;
+            color: white;
+            background-color: grey;
+            padding: 8px;
+        }
+
+        /*franca*/
+         #franca.bandeira{
+            display: flex;
+            flex-direction: row;
+        }
+
+        #franca.bandeira > div.vermelho{
+            background-color: red;
+            flex: 1;
+        }
+        #franca.bandeira > div.branco{
+            background-color: white;
+            flex: 1;
+        }
+        #franca.bandeira > div.azul{
+            background-color: blue;
+            flex: 1;
+        }
+
+
+        /*alemanha*/
+        #alemanha.bandeira {
+            display: flex;
+            flex-direction: column;
+        }
+        
+
+        #alemanha.bandeira > div.preto{
+            background-color: black;
+            flex: 1;
+        }
+        #alemanha.bandeira > div.vermelho{
+            background-color: red;
+            flex: 1;
+        }
+        #alemanha.bandeira > div.amarelo{
+            background-color: yellow;
+            flex: 1;
+        }
+
+
+        /*japao*/
+         #japao.bandeira {
+            background-color: white;
+            position: relative;
+        }
+
+        #japao.bandeira > div.circulo {
+            background-color: red;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="franca" class="bandeira">
+        <div class="azul"></div>
+        <div class="branco"></div>
+        <div class="vermelho"></div>
+    </div>
+
+    <div id="alemanha" class="bandeira">
+        <div class="preto"></div>
+        <div class="vermelho"></div>
+        <div class="amarelo"></div>
+    </div>
+
+    <div id="japao" class="bandeira">
+        <div class="circulo"></div>
+    </div>
+
+    
+        
+
+    </div>
+    
+</body>
+</html>
