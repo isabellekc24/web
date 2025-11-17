@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Dados e Operações em JavaScript</title>
+</head>
+<body>
+    <h1>Tipos de Dados e Operações em JavaScript</h1>
+    <button onclick="executarScript()">Executar Script</button>
+    
+    <h2>Tipos das Variáveis</h2>
+    <p id="pstring"></p>
+    <p id="pnumero"></p>
+    <p id="pboolean"></p>
+    <p id="pnull"></p>
+    <p id="pobject"></p>
+    <p id="parray"></p>
+    
+    <h2>Operações entre Tipos Diferentes</h2>
+    <p id="op1"></p>
+    <p id="op2"></p>
+    <p id="op3"></p>
+    <p id="op4"></p>
+    <p id="op5"></p>
+    
+    <script>
+        function executarScript() {
+            let str = "Isabelle";
+            let num = 42;
+            let bool = true;
+            let nul = null;
+            let obj = {key: "value"};
+            let arr = [1, 2, 3];
+            
+            // typeof
+            document.getElementById("pstring").innerText = "Tipo de str: " + typeof str;
+            document.getElementById("pnumero").innerText = "Tipo de num: " + typeof num;
+            document.getElementById("pboolean").innerText = "Tipo de bool: " + typeof bool;
+            document.getElementById("pnull").innerText = "Tipo de nul: " + typeof nul;
+            document.getElementById("pobject").innerText = "Tipo de obj: " + typeof obj;
+            document.getElementById("parray").innerText = "Tipo de arr: " + typeof arr;
+            
+            let op1 = str + num; 
+            console.log("str + num:", op1);
+            document.getElementById("op1").innerText = "str + num = '" + op1 + "' (concatenação: string + number resulta em string)";
+            
+            let op2 = bool * num; 
+            console.log("bool * num:", op2);
+            document.getElementById("op2").innerText = "bool * num = " + op2 + " (boolean é convertido para 1 ou 0; true=1, false=0)";
+            
+            let op3 = num / bool; 
+            console.log("num / bool:", op3);
+            document.getElementById("op3").innerText = "num / bool = " + op3 + " (boolean convertido para 1 ou 0 na divisão)";
+            
+            let op4 = str + bool;
+            console.log("str + bool:", op4);
+            document.getElementById("op4").innerText = "str + bool = '" + op4 + "' (boolean convertido para 'true' ou 'false' e concatenado)";
+            
+            let op5 = arr + obj; 
+            console.log("arr + obj:", op5);
+            document.getElementById("op5").innerText = "arr + obj = '" + op5 + "' (ambos convertidos para string e concatenados)";
+        }
+    </script>
+</body>
+</html>
