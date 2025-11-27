@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Nome</label>
+        <input id="nome" type="text"><br><br>
+
+        <label for="">Peso</label>
+        <input id="peso" type="number" step="0.1"><br><br>
+
+        <label for="">Altura</label>
+        <input id="altura" type="number" step="0.01"><br><br>
+
+        <button>Calcular</button>
+    </div>
+
+    <p id="resultado"></p>
+    <P id="classificacao"></P>
+
+    <img id="imgPerfil">
+
+    
+
+
+    <script>
+
+        button=document.querySelector("button")
+        let inputNome=document.querySelector("#nome")
+        let inputPeso=document.querySelector("#peso")
+        let inputAltura=document.querySelector("#altura")
+
+        document.getElementById("pstring").innerText = "Tipo de str: " + typeof str;
+
+    
+
+
+/*
+        b=document.querySelector("button")
+        let inputPeso=document.querySelector("#peso");
+        let inputAltura=document.querySelector("#altura")
+
+        b.addEventListener("click",()=>{
+            let peso=Number.parseFloat(inputPeso.value);
+            let altura=Number.parseFloat(inputAltura.value);
+            imc=peso/(altura**altura)
+            console.log(imc)
+            let resultado = document.getElementById("resultado");
+            resultado.innerHTML=`<p>IMC=${imc} </p>`
+        })*/
+    </script>
+</body>
+</html>
