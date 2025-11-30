@@ -17,70 +17,73 @@
 </head>
 <body>
     <button id="limpar">Limpar localStorage</button>
+
     <div id="formulario">
-    <label for="id">id</label>
-    <input type="text" name="id" id="id" readonly>
+        <label for="id">id</label>
+        <input type="text" name="id" id="id" readonly>
 
-    <label for="nome">nome</label>
-    <input type="text" name="nome" id="nome">
+        <label for="nome">nome</label>
+        <input type="text" name="nome" id="nome">
 
-    <label for="email">email</label>
-    <input type="text" name="email" id="email">
+        <label for="email">email</label>
+        <input type="text" name="email" id="email">
 
-    <button id="botaoSalvar">Cadastrar</button>
+        <button id="botaoSalvar">Cadastrar</button>
     </div>
-    <div id="listagem">
-        
-    </div>
+
+    <div id="listagem"></div>
+
     <script>
-
         let inputid = document.querySelector("#id");
         let inputnome = document.querySelector("#nome");
         let inputemail = document.querySelector("#email");
         let buttonlimpar = document.querySelector("#limpar");
         let listagem = document.querySelector("#listagem");
         let button = document.querySelector("#botaoSalvar");
-        
-        buttonlimpar.addEventListener("click", ()=>{
-            localStorage.clear();
-        })
+
+        // ---- CORREÇÃO AQUI ----
+        // era var listaNomes = [], mas isso sobrescrevia os dados carregados
+        let listaNomes = [];
+
         if (localStorage.getItem("listaNomes")){
             listaNomes = JSON.parse(localStorage.getItem("listaNomes"));
-        } else{
-            listaNomes=[];  
         }
-        var listaNomes=[];
 
-        button.addEventListener("click", ()=>{
+        buttonlimpar.addEventListener("click", ()=>{
+            localStorage.clear();
+            listaNomes = [];
+            listagemPessoas();
+        });
+
+        button.addEventListener("click", () => {
             let maxid = listaNomes.length;
             listaNomes.push({
-                "id": maxid+1,
+                "id": maxid + 1,
                 "nome": inputnome.value,
                 "email": inputemail.value
             });
-            console.log(listaNomes)
-            listagemPessoas();
+
             localStorage.setItem("listaNomes", JSON.stringify(listaNomes));
-        })
+            listagemPessoas();
+        });
 
         function listagemPessoas(){
-            listagem.innerHTML="";
-            listaNomes.forEach((e)=>{
-                
-                item = `
-                <div class="itemlista">
-                    <input type="text" class="id" value=${e.id}>
-                    <input type="text" class="nome" value=${e.nome}>
-                    <input type="text" class="email" value=${e.email}>
-                </div>
-            `
-            console.log(item)
-            listagem.innerHTML+=item;
-            })
-            
-        }
-         listagemPessoas();
+            listagem.innerHTML = "";
+            listaNomes.forEach((e) => {
 
+                item = `
+                    <div class="itemlista">
+                        <input type="text" class="id" value="${e.id}">
+                        <input type="text" class="nome" value="${e.nome}">
+                        <input type="text" class="email" value="${e.email}">
+                    </div>
+                `;
+                
+                listagem.innerHTML += item;
+            });
+        }
+
+        listagemPessoas();
     </script>
 </body>
 </html>

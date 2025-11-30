@@ -6,7 +6,22 @@
     <title>Document</title>
     <style>
 
-        
+      body {
+        background-color: aliceblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+        gap: 15px; /* Espaço entre os elementos */
+        font-family: Arial, sans-serif;
+    }
+
+    #hoverDiv {
+        padding: 10px;
+        background-color: blue;
+    }
+
 
     </style>
 </head>
@@ -20,6 +35,40 @@
     <option value="green">Verde</option>
     <option value="red">Vermelho</option>
   </select>
+
+  <script>
+  document.getElementById("alertButton").addEventListener("click", function() {
+    alert("Você clicou no botão!");
+  });
+
+  document.getElementById("textInput").addEventListener("keydown", function(event) {
+    console.log(event.key);
+  });
+
+  document.getElementById("textInput").addEventListener("focus", function() {
+    this.style.backgroundColor = "yellow";
+  });
+
+  document.getElementById("textInput").addEventListener("blur", function() {
+    this.style.backgroundColor = "";
+  });
+
+  document.getElementById("hoverDiv").addEventListener("mouseover", function() {
+    this.style.backgroundColor = "magenta";
+  });
+
+  document.getElementById("hoverDiv").addEventListener("mouseout", function() {
+    this.style.backgroundColor = "";
+  });
+
+  document.getElementById("colorSelect").addEventListener("change", function() {
+    document.body.style.backgroundColor = this.value;
+  });
+
+
+
+
+  </script>
 </body>
 
 </html>
