@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #b7b0b0;
+            font-family: Arial, sans-serif;
+        }
+
+        .calculadora {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+        }
+
+        #display {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-align: right;
+            border: 2px solid #000000;
+            border-radius: 5px;
+        }
+
+        .botoes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        button {
+            padding: 12px;
+            font-size: 18px;
+            border: none;
+            background: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #d6d6d6;
+        }
+
+        #igual {
+            background: green;
+        }
+
+        #igual:hover {
+            background: lightgreen;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calculadora">
+        <input type="text" id="display"disabled> 
+        <!--visor dos numeros 
+        ele guarda os numeros e a operação digitada-->
+
+        <div class="botoes">
+            
+            <button onclick="adicionar('+')">+</button>
+            <!--cada botao da calculadora tem o evente onclick que faz a ligação entre o botão e a função, ao clicar, esse evente chama a função adicionar() e passa o valor dela pro visor-->
+            <button onclick="adicionar('-')">-</button>
+            <button onclick="adicionar('*')">x</button>
+            <button onclick="adicionar('/')">/</button>
+
+
+            <button onclick="adicionar('7')">7</button>
+            <button onclick="adicionar('8')">8</button>
+            <button onclick="adicionar('9')">9</button>
+
+            <button id="igual" onclick="calcular()">=</button>
+
+
+
+            <button onclick="adicionar('4')">4</button>
+            <button onclick="adicionar('5')">5</button>
+            <button onclick="adicionar('6')">6</button>
+
+
+            <button onclick="adicionar('1')">1</button>
+            <button onclick="adicionar('2')">2</button>
+            <button onclick="adicionar('3')">3</button>
+
+
+            <button onclick="adicionar('0')">0</button>
+            <button onclick="adicionar('.')">.</button>
+            <button onclick="limpar()">C</button>
+        </div>
+    </div>
+
+    <script>
+
+        const display = document.getElementById("display");
+        /*procura no html o elemetno display, que é o visor da calc*/
+
+        function adicionar(valor) {
+            display.value += valor;
+        }
+        /*essa função é chamada quando ousuário clica em um botão*/
+
+        function limpar() {
+            display.value = "";
+        }
+
+        function calcular() {
+            //verifica se o que foi digitado no visor(display), senão contem algum caracter fora do desejado
+            if (/^[0-9+\-*/.() ]+$/.test(display.value)) {
+                //pego o valor de dentro do visor
+                //calcula usando a função eval(), faz o calculo retorna o resultado no visor
+                display.value = eval(display.value);
+            } else {
+                alert("Erro!");
+            }
+        }
+    </script>
+    
+</body>
+</html>

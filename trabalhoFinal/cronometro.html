@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cronômetro</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #a3d4e2;
+        color: #585555;
+
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        
+        height: 100vh;  
+        gap: 30px;
+    }
+
+    #tempo {
+        font-size: 60px;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #f3eeee;
+        font-size: 16px;
+    }
+    button:hover{
+        background: rgb(182, 182, 188);
+    }
+
+    #lista {
+        background: #f3eeee;
+        padding: 20px;
+        border-radius: 8px;
+        width: 200px;
+    }
+</style>
+</head>
+<body>
+
+<div>
+    <div id="tempo">00:00:00</div>
+
+    <button onclick="iniciar()">Iniciar</button>
+    <button onclick="pausar()">Pausar</button>
+    <button onclick="zerar()">Zerar</button>
+</div>
+
+<div id="lista">
+    <h3>Paradas</h3>
+    <ol id="pausas"></ol> <!--lista das pausas-->
+</div>
+
+<script>
+
+let intervalo = null; //guarda o id do setInterval, quando esta rodando diferente de null
+let tempoInicial = null; //guarda o tempo exato que inicio
+let tempoDecorrido = 0;
+
+function formatar(ms) { 
+    let total = Math.floor(ms / 1000);
+    let h = String(Math.floor(total / 3600)).padStart(2, '0');
+    let m = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
+    let s = String(total % 60).padStart(2, '0');
+    return `${h}:${m}:${s}`;
+} //transforma os milisegundos em hora
+
+function atualizar() {
+    const agora = Date.now(); //a função date.now() descobre o horário atual, calcula o tempo que passou desde o inicio do cronometro
+    const ms = agora - tempoInicial + tempoDecorrido;
+    document.getElementById("tempo").textContent = formatar(ms);
+    //atualiza o texto da minha div tempo no corpo do html
+} 
+function iniciar() {
+    if (intervalo !== null) return; //se o cronometro ja estiver rodando e clicar em inicar ele sai
+
+    tempoInicial = Date.now();
+    intervalo = setInterval(atualizar, 100);
+    //pega o tempo inicial 00 e começa a atualizar
+}
+
+function pausar() {
+    if (intervalo === null) return; //se ja estiver parado ele n faz nada
+
+    clearInterval(intervalo);
+    intervalo = null; // transforma o intervalo em null para parar de rodar
+
+    // soma o tempo atual + acumulado
+    tempoDecorrido += Date.now() - tempoInicial;
+
+    registrarParada();
+}
+
+function zerar() { //esta função zera tudo
+    clearInterval(intervalo);
+    intervalo = null;
+    tempoInicial = null;
+    tempoDecorrido = 0;
+    document.getElementById("tempo").textContent = "00:00:00";
+    document.getElementById("pausas").innerHTML = "";
+}
+
+function registrarParada() {
+    //cria o item da lista 
+    const li = document.createElement("li");
+
+    //quando pausa, converte o tempo acumulado e coloca na lista
+    li.textContent = formatar(tempoDecorrido);
+    document.getElementById("pausas").appendChild(li);
+}
+
+document.addEventListener("keydown", function(event) {
+    //verifica qual tecla foi clicada e faz a devida ação, caso contrário nada
+    const tecla = event.key.toLowerCase();
+
+    if (tecla === "i") {
+        iniciar();
+    }
+    else if (tecla === "p") {
+        pausar();
+    }
+    else if (tecla === "z") {
+        zerar();
+    }
+});
+</script>
+</body>
+</html>
