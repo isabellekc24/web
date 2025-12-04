@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: rgb(74, 74, 74);
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(191, 191, 191);
+}
+
+button {
+    padding:10px 15px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: gray;
+}
+
+#filmes { /*div dos filmes*/
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.filme {
+    background-color: white;
+    width: 190px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.imgPoster {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+.filmeTitulo {
+    font-weight: bold;
+
+}
+
+.filmeAno {
+    color: bla;
+}
